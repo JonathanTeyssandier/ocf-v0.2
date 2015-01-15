@@ -9,72 +9,61 @@
 
     <div class="container" id="note">
         <div class="row">
-        	<%= form_for @course, url: course_path(@course.name) do |f| %>
-  <% if @course.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+  		<%= form_for @course, url: "create" do |f| %>
 
-      <ul>
-      <% @course.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="row">
-    <div class="field col-sm-6">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-    </div>
-    <div class="field col-sm-3">
-      <%= f.label :status %> (null, v2 or new)<br>
-      <%= f.text_field :status %>
-    </div>
-    <div class="field col-sm-3">
-      <%= f.label :order %><br>
-      <%= f.text_field :order %>
-    </div>
-    <div class="field col-sm-12">
-      <%= f.label :title %><br>
-      <%= f.text_field :title %>
-    </div>
-    <div class="field col-sm-12">
-      <%= f.label :description %> (can accept html)<br>
-      <%= f.text_area :description %>
-    </div>
-    <div class="field col-sm-12">
-      <%= f.label :details %> (can accept html)<br>
-      <%= f.text_area :details %>
-    </div>
-    <br />
-    <div class="field col-sm-6">
-      <%= f.label :start %><br>
-      <%= f.text_field :start, :value => @course.getStart(false) %>
-    </div>
-    <div class="field col-sm-6">
-      <%= f.label :end %><br>
-      <%= f.text_field :end, :value => @course.getEnd(false) %>
-    </div>
-    <div class="field col-sm-12">
-      <%= f.label :schedule_notes %><br>
-      <%= f.text_field :schedule_notes %>
-    </div>
-    <br />
-    <div class="field col-sm-2">
-      <%= f.label :price %> (in £)<br>
-      <%= f.text_field :price %>
-    </div>
-    <div class="field col-sm-10">
-      <%= f.label :paylink %> (if nil, it will mark the course as not opened yet)<br>
-      <%= f.text_field :paylink %>
-    </div>
-    <div class="actions righted col-sm-12">
-      <%= link_to "Back", course_path(@course.name), :class => 'btn btn-danger btn-lg' %>
-      <%= f.submit 'Create', :class => 'btn btn-success btn-lg pay-btn' %>
-    </div>
-  </div>
-<% end %>
+			  <div class="row">
+			    <div class="field col-sm-6">
+			      <%= f.label :name %><br>
+			      <%= f.text_field :name %>
+			    </div>
+			    <div class="field col-sm-3">
+			      <%= f.label :status %> (null, v2 or new)<br>
+			      <%= f.text_field :status %>
+			    </div>
+			    <div class="field col-sm-3">
+			      <%= f.label :order %><br>
+			      <%= f.text_field :order %>
+			    </div>
+			    <div class="field col-sm-12">
+			      <%= f.label :title %><br>
+			      <%= f.text_field :title %>
+			    </div>
+			    <div class="field col-sm-12">
+			      <%= f.label :description %> (can accept html)<br>
+			      <%= f.text_area :description %>
+			    </div>
+			    <div class="field col-sm-12">
+			      <%= f.label :details %> (can accept html)<br>
+			      <%= f.text_area :details %>
+			    </div>
+			    <br />
+			    <div class="field col-sm-6">
+			      <%= f.label :start %><br>
+			      <%= f.text_field :start, :value => @course.getStart(false) %>
+			    </div>
+			    <div class="field col-sm-6">
+			      <%= f.label :end %><br>
+			      <%= f.text_field :end, :value => @course.getEnd(false) %>
+			    </div>
+			    <div class="field col-sm-12">
+			      <%= f.label :schedule_notes %><br>
+			      <%= f.text_field :schedule_notes %>
+			    </div>
+			    <br />
+			    <div class="field col-sm-2">
+			      <%= f.label :price %> (in £)<br>
+			      <%= f.text_field :price %>
+			    </div>
+			    <div class="field col-sm-10">
+			      <%= f.label :paylink %> (if nil, it will mark the course as not opened yet)<br>
+			      <%= f.text_field :paylink %>
+			    </div>
+			    <div class="actions righted col-sm-12">
+			      <%= link_to "Back", course_path(@course.name), :class => 'btn btn-danger btn-lg' %>
+			      <%= f.submit 'Create', :class => 'btn btn-success btn-lg pay-btn' %>
+			    </div>
+			  </div>
+			<% end %>
         </div>
     </div>
 </section>
