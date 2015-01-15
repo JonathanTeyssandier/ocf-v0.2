@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'courses/new'
+
   root 'static#index'
   get '/about', to: 'static#about'
   # get '/contact', to: 'static#contact'
@@ -20,7 +22,7 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  resources :courses, only: [:index, :edit, :update, :show]
+  resources :courses, only: [:index, :edit, :update, :show, :new]
 
   # Example resource route with options:
   #   resources :products do
